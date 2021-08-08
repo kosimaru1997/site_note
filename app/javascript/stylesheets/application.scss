@@ -4,13 +4,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Hiragino Maru Gothic ProN;
 }
 
 .text-right {
   text-align: right;
 }
 
-header {
+.navbar {
   z-index: 1;
 }
 
@@ -19,27 +20,32 @@ header {
   background-color: #f5f5ee;
 }
 
+// ーーーーーーユーザー認証ページーーーーーー
 .sign-up {
   height: 100vh;
   background: linear-gradient(to bottom right, #ffca35 0%, #ded08d 100%);
   opacity: 0.9;
+}
+.login {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #288bd2 0%, #c5c3a6 100%);
+  opacity: 0.9;
+}
 
-  h2 {
-    padding-top: 100px;
-    padding-bottom: 20px;
-    font-size: 40px;
-    transition-duration: 1s;
-    color: white;
-  }
-  
+.sign-up-title {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-size: 40px;
+  transition-duration: 1s;
+  color: white;
 }
 
 form#new_user input {
-  appearance: none;
+  // appearance: none;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-  width: 250px;
+  width: 350px;
   border-radius: 3px;
   padding: 10px 15px;
   margin: 0 auto 10px auto;
@@ -56,7 +62,7 @@ form#new_user input {
   }
   &:focus {
     background-color: white;
-    width: 300px;
+    width: 450px;
     color: grey;
   }
 }
@@ -67,7 +73,6 @@ form#new_user input {
   background-color: white;
   border: 0;
   padding: 10px 15px;
-  color: #f7ab38;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
@@ -76,6 +81,26 @@ form#new_user input {
 
   &:hover {
     background-color: #f5f7f9;
+  }
+}
+.sign-up-color {
+  color: #f7ab38;
+}
+.login-color {
+  color: #3779dc;
+}
+
+.sign-up-link a {
+  color: #ce5f00;
+}
+
+.remember-field {
+  width: 40%;
+  margin: 0 auto;
+  justify-content: center;
+
+  input {
+    appearance: auto;
   }
 }
 
@@ -169,7 +194,20 @@ form#new_user input {
   }
 }
 
+// ーーーーーーーーーーーーーーーー
 @media (max-width: 1023px) {
+
+  form#new_user input {
+    width: 250px;
+
+    &:focus {
+      width: 300px;
+    }
+  }
+
+  .new-user-btn {
+    width: 200px;
+  }
 
   .bg-bubbles li:nth-child(6) {
     left: 65%;
