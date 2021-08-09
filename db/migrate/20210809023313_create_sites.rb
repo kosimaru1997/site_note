@@ -10,6 +10,6 @@ class CreateSites < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :sites, [:title, :page, :created_at]
+    add_index :sites, [:title, :note, :page, :created_at]
   end
 end
