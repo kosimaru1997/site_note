@@ -1,0 +1,15 @@
+<li class="card-list my-4" style="width: 33%;">
+  <div class="card mx-auto" style="width: 95%;">
+  <img src="<%= site.image %>"  alt="画像がありません" class="border-bottom card-image">
+  <div class="card-body">
+    <h5 class="card-title"><% if site.title.present? %><%= site.title %><% else %>No Title<% end %></h5>
+    <% if site.note.present? %>
+      <p class="card-text text-dark mb-1"><%= safe_join(site.note.split("\n"), tag(:br)) %></p>
+    <% end %>
+    <% if current_user == site.user %>
+      <div class="text-end">
+        <object><%= link_to "削除", site_path(site), method: :delete, class: "text-danger", data: {confirm: "本当に削除しますか？"} %></object>
+      </div>
+    <% end %>
+  </div>
+</li>

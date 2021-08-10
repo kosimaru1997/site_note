@@ -1,14 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+// @import '@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '@fortawesome/fontawesome-free/scss/solid';
+// @import '@fortawesome/fontawesome-free/scss/regular';
+// @import '@fortawesome/fontawesome-free/scss/brands';
+// @import '@fortawesome/fontawesome-free/scss/v4-shims';
+
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
 * {
   margin: 0;
   padding: 0;
   font-family: Hiragino Maru Gothic ProN;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .navbar {
@@ -194,7 +198,24 @@ form#new_user input {
   }
 }
 
-// ーーーーーーーーーーーーーーーー
+// 背景カラー
+.bg-site {
+  background-color: ghostwhite;
+}
+
+.card-list {
+  list-style: none;
+}
+
+.card-image {
+  min-height: 200px;
+  max-height: 280px;
+}
+
+
+
+
+// ーーーーーーーレスポンスーーーーーーーーー
 @media (max-width: 1023px) {
 
   form#new_user input {
@@ -221,7 +242,7 @@ form#new_user input {
     left: 55%;
     width: 160px;
     height: 160px;
-    animation-delay: 11s;        
+    animation-delay: 11s;
   }
 
 }

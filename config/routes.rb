@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/edit'
+
   devise_for :users
+  resources :sites, only: %i[new index show edit create destroy update]
 
   unauthenticated :user do
     root to: 'homes#top', as: :unauthenticated_root
