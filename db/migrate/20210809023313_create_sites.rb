@@ -5,11 +5,11 @@ class CreateSites < ActiveRecord::Migration[6.1]
       t.string :url, null: false
       t.string :title
       t.text :image
-      t.text :page
       t.text :note
 
       t.timestamps
     end
-    add_index :sites, [:title, :note, :page, :created_at]
+    add_index :sites, [:title]
+    add_index :sites, [:note]
   end
 end

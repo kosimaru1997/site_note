@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 2021_08_09_023313) do
     t.string "url", null: false
     t.string "title"
     t.text "image"
-    t.text "page"
     t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["title", "page", "created_at"], name: "index_sites_on_title_and_page_and_created_at"
+    t.index ["note"], name: "index_sites_on_note"
+    t.index ["title"], name: "index_sites_on_title"
     t.index ["user_id"], name: "index_sites_on_user_id"
   end
 
