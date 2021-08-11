@@ -1,34 +1,35 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid px-0">
+  <div class="row mt-4">
     <div class="col-11 mx-auto">
 
-      <h1 class="text-center my-3">Your Site Note</h1>
+      <div class="">
+      <div class="d-flex">
+        <p>
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSiteNote" aria-expanded="false" aria-controls="collapseSiteNote">
+            <i class="fas fa-file-import fa-2x"></i>
+          </button>
+        </p>
 
-      <p>
-        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSiteNote" aria-expanded="false" aria-controls="collapseSiteNote">
-          <i class="fas fa-file-import fa-2x"></i>
-        </button>
-      </p>
-
-      <div class="collapse show" id="collapseSiteNote">
-        <div class="media-width bg-site pt-4 px-4 mb-5">
-          <%= form_with(model: @site) do |f| %>
-            <%= f.text_field :url, class: 'form-control mb-3', placeholder: "URLを入力する。例：https://hogehoge" %>
-            <%= f.text_area :note, :size=>"30x3", class: 'form-control', placeholder: "メモを記入する。例：RailsのCRUD処理の基本を学べるサイト" %>
-            <div class="pb-2">
-              <%= f.submit :"ストック", class: "btn btn-primary d-block ms-auto mt-2" %>
-            </div>
-          <% end %>
+        <div class="collapse w-90 ms-3 show" id="collapseSiteNote">
+          <div class="bg-site pt-3 pb-1 px-4 mb-2">
+            <%= form_with(model: @site) do |f| %>
+              <%= f.text_field :url, class: 'form-control mb-3', placeholder: "例：https://hogehoge" %>
+              </div>
+            <% end %>
+          </div>
         </div>
+      </div>
       </div>
 
     </div>
   </div>
-
-    <div class="d-flex flex-wrap mb-5">
+  
+  <div class= "pt-4">
+    <h1 class="ms-3 text-dark">ー Your Site Note ー</h1>
+    <div class="d-flex flex-wrap mx-4 mb-5">
       <%= render @sites %>
-
     </div>
+  </div>
 
     </div>
   </div>
