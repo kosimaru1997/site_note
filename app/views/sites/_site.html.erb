@@ -12,7 +12,7 @@
     <% end %>
     <% if current_user == site.user %>
       <div class="text-end">
-        <object><%= link_to "詳細", site_path(site), method: :delete, class: "text-info me-3", data: {confirm: "本当に削除しますか？"} %></object>
+        <object><%= link_to "詳細", edit_site_path(site), class: "text-info me-3" %></object>
         <object><%= link_to "削除", site_path(site), method: :delete, class: "text-danger", data: {confirm: "本当に削除しますか？"} %></object>
       </div>
     <% end %>

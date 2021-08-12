@@ -214,6 +214,7 @@ form#new_user input {
   background-color: #e2e2e2;
 }
 
+// ーーーーカードーーーーー
 .card-list {
   list-style: none;
   width: 33.3%;
@@ -233,6 +234,13 @@ form#new_user input {
   max-height: 50px;
   overflow: hidden;
 }
+// ーーーーーーーーーーーーーーー
+
+.note-control {
+  border:none;
+  outline:none;
+}
+
 
 // ーーーーーモーダルーーーーーー
 @media (min-width: 576px) {
@@ -243,7 +251,7 @@ form#new_user input {
 }
 // ーーーーーーーーーーーーーーー
 
-// ーーーーーーーレスポンスーーーーーーーーー
+// ーーーーーーーレスポンシブーーーーーーーーー
 @media (max-width: 1023px) {
 
   form#new_user input {
