@@ -18,11 +18,13 @@ ActiveRecord::Schema.define(version: 2021_08_09_023313) do
   create_table "sites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "url", null: false
-    t.string "title"
+    t.string "title", default: "No Title"
+    t.text "description", default: "No Description"
     t.text "image"
     t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["description"], name: "index_sites_on_description"
     t.index ["note"], name: "index_sites_on_note"
     t.index ["title"], name: "index_sites_on_title"
     t.index ["user_id"], name: "index_sites_on_user_id"
