@@ -2,18 +2,22 @@ class SitesController < ApplicationController
   def index
   end
 
+  def edit
+    @site = Site.find(params[:id])
+  end
+
   def create
     @site = current_user.sites.new(site_params)
     begin
       @site.get_site_info(@site.url)
     rescue MetaInspector::RequestError,MetaInspector::ParserError => e
-      redirect_back(fallback_location: root_path) and return
+      render 'shared/flash' and return
     end
     
     if @site.save
       redirect_back(fallback_location: root_path)
     else
-
+      render 'shared/errors'
     end
   end
 

@@ -1,28 +1,37 @@
-<div class="container-fluid px-0">
-  <div class="row mt-4">
-    <div class="col-11 mx-auto">
 
-      <div class="">
-      <div class="d-flex">
-        <p>
-          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSiteNote" aria-expanded="false" aria-controls="collapseSiteNote">
-            <i class="fas fa-file-import fa-2x"></i>
-          </button>
-        </p>
+    <div class="mt-3 ms-3">
+      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fas fa-file-import fa-2x"></i>
+      </button>
+    </div>
 
-        <div class="collapse w-90 ms-3 show" id="collapseSiteNote">
-          <div class="bg-site pt-3 pb-1 px-4 mb-2">
-            <%= form_with(model: @site) do |f| %>
-              <%= f.text_field :url, class: 'form-control mb-3', placeholder: "例：https://hogehoge" %>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable w-90 mx-auto">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create Site Note</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="flash_messages">
+                <% flash.each do |message_type, message| %>
+                <% end %>
               </div>
-            <% end %>
+              <div class="bg-site py-3 px-4 mb-2">
+                <%= form_with(model: @site, local: false) do |f| %>
+                  <%= f.text_field :url, class: 'form-control mb-3', placeholder: "例：https://hogehoge" %>
+                  <%= f.text_area :note, :size=>"30x7", class: 'form-control', placeholder: "メモを記入する。例：RailsのCRUD処理の基本を学べるサイト" %>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+                  <%= f.submit :"ストック", class: "btn btn-outline-secondary d-block ms-auto" %>
+                <% end %>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-
-    </div>
-  </div>
   
   <div class= "pt-4">
     <h1 class="ms-3 text-dark">ー Your Site Note ー</h1>
@@ -30,7 +39,3 @@
       <%= render @sites %>
     </div>
   </div>
-
-    </div>
-  </div>
-</div>
