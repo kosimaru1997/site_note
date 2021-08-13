@@ -14,7 +14,7 @@
       <div class="text-end mt-3">
         <object><%= link_to "詳細", site_path(site), class: "text-primary me-2" %></object>
         <% if current_user == site.user %>
-          <object><%= link_to "編集", edit_site_path(site), class: "text-info me-3" %></object>
+          <object><%= link_to "編集", edit_site_path(site), "data-turbolinks": false, class: "text-info me-3" %></object>
           <object><%= link_to "削除", site_path(site), method: :delete, class: "text-danger", data: {confirm: "本当に削除しますか？"} %></object>
         <% end %>
       </div>
