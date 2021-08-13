@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 initializer "devise.configure_zeitwerk_if_enabled" do
   if Rails.autoloaders.zeitwerk_enabled? && !defined?(ActionMailer)
     Rails.autoloaders.main.ignore("#{__dir__}/relative/path/to/devise/mailer.rb")
