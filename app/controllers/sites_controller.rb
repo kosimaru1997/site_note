@@ -1,11 +1,7 @@
 class SitesController < ApplicationController
   def index
   end
-
-  def edit
-    @site = Site.find(params[:id])
-  end
-
+  
   def create
     @site = current_user.sites.new(site_params)
     begin
@@ -21,6 +17,23 @@ class SitesController < ApplicationController
     end
   end
 
+  def show
+    @site = Site.find(params[:id])
+  end
+  
+  def edit
+    @site = Site.find(params[:id])
+  end
+
+  def update
+    @site = Site.find(params[:id])
+    if @site.update(site_params)
+      redirect_to site_path(@site)
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
     Site.find(params[:id]).destroy
     redirect_back(fallback_location: root_path)
