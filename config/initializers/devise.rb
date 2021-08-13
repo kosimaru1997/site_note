@@ -1,4 +1,9 @@
 # frozen_string_literal: true
+initializer "devise.configure_zeitwerk_if_enabled" do
+  if Rails.autoloaders.zeitwerk_enabled? && !defined?(ActionMailer)
+    Rails.autoloaders.main.ignore("#{__dir__}/relative/path/to/devise/mailer.rb")
+  end
+end
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -24,7 +29,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
