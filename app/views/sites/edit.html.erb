@@ -1,8 +1,10 @@
+<%= javascript_pack_tag 'easymdn' %>
+
 <div class="container-fluid">
 
   <div class="row pb-3 mt-3 border-bottom">
     <div class="col-md-4">
-      <img src="<%= @site.image %>" class="rounded w-100">
+      <img src="<%= @site.image %>" class="rounded w-90">
     </div>
     <div class="col-md-8">
       <a href="<%= @site.url %>" target="_blank" rel="noopener noreferrer">
@@ -12,13 +14,12 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row my-4">
 
-      <%= form_with(model: @site, local: false) do |f| %>
-        <%= f.label :note, class: "" %>
-        <%= f.text_area :note, class: "form-control note-control", id: "editor"%>
+      <%= form_with(model: @site, local: true) do |f| %>
+        <%= f.text_area :note, id: "editor"%>
+        <%= f.submit :"ストック", class: "btn btn-outline-secondary mb-3" %>
       <% end%>
-    </div>
 
   </div>
 
