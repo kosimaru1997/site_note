@@ -25,6 +25,10 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
   end
 
+  def preview
+
+  end
+
   def update
     @site = Site.find(params[:id])
     if @site.update(site_params)

@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     root to: 'users#show'
   end
 
+  get '/api/preview', to: 'api#preview'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
