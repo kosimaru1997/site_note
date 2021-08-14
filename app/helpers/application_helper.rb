@@ -39,7 +39,7 @@ module ApplicationHelper
           strikethrough: true
       }
       markdown = Redcarpet::Markdown.new(html_render, options)
-      markdown.render(text)
+      markdown.render(text).html_safe
   end
 
 end
