@@ -1,4 +1,8 @@
 class SitesController < ApplicationController
+  def new
+    @site = Site.new
+  end
+  
   def index
   end
   
@@ -11,7 +15,7 @@ class SitesController < ApplicationController
     end
     
     if @site.save
-      redirect_back(fallback_location: root_path)
+      redirect_to site_path(@site)
     else
       render 'shared/errors'
     end

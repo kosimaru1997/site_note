@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+  <h3>Create Site Note</h3>
+    <div>
+      <div id="flash_messages">
+        <% flash.each do |message_type, message| %>
+        <% end %>
+      </div>
+      <div class="bg-site py-3 px-4 mb-2">
+        <%= form_with(model: @site, local: false) do |f| %>
+          <%= f.text_field :url, class: 'form-control mb-3', placeholder: "例：https://hogehoge" %>
+          <div class="file-header d-flex">
+            <div class="border-top border-start border-end events-none bg-white py-2 px-3" id="markdown"> Edit note </div>
+            <div class="events-auto border-top border-end bg-light-grey py-2 px-3", id="preview">
+              Preview
+            </div>
+          </div>
+          <div id="preview-area"></div>
+          <div id="note-form">
+            <%= f.text_area :note, size: "30x13" , class: "form-control note-control p-3", id: "md-textarea"%>
+          </div>
+          <%= f.submit :"Post", class: "btn btn-outline-secondary d-block px-4 ms-2 my-3" %>
+          <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
