@@ -13,7 +13,7 @@ import '@fortawesome/fontawesome-free/js/all';
 import 'bootstrap';
 // import 'easymde/dist/easymde.min.css'
 // import EasyMDE from 'easymde'
-import 'easymde'
+// import 'easymde'
 
 
 Rails.start()

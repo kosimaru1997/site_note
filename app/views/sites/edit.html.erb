@@ -1,21 +1,23 @@
   <div class="row my-4">
-    <a href="<%= @site.url %>" target="_blank" rel="noopener noreferrer">
-      <h3 class="mb-4"><%= @site.title %></h3>
-    </a>
+    
+    <h3 class="mb-4">
+      <a href="<%= @site.url %>" target="_blank" rel="noopener noreferrer"><%= @site.title %></a>
+    </h3>
+    
 
-      <%= form_with(model: @site, local: true) do |f| %>
-        <div class="file-header d-flex">
-          <div class="border-top border-start border-end events-none bg-white py-2 px-3" id="markdown"> Edit note </div>
-          <div class="events-auto border-top border-end bg-light-grey py-2 px-3", id="preview">
-            Preview
-          </div>
+    <%= form_with(model: @site, local: true) do |f| %>
+      <div class="file-header d-flex">
+        <div class="border-top border-start border-end events-none bg-white py-2 px-3" id="markdown"> Edit note </div>
+        <div class="events-auto border-top border-end bg-light-grey py-2 px-3", id="preview">
+          Preview
         </div>
-        <div id="preview-area"></div>
-        <div id="note-form">
-          <%= f.text_area :note, size: "30x13" , class: "form-control note-control p-3", id: "md-textarea"%>
-        </div>
-        <%= f.submit :"Update", class: "btn btn-outline-secondary d-block px-4 ms-2 my-3" %>
-      <% end%>
+      </div>
+      <div id="preview-area"></div>
+      <div id="note-form">
+        <%= f.text_area :note, size: "30x13" , class: "form-control note-control p-3", id: "md-textarea"%>
+      </div>
+      <%= f.submit :"Update", class: "btn btn-outline-secondary d-block px-4 ms-2 my-3" %>
+    <% end%>
 
   </div>
 
