@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
   require "redcarpet"
   require "coderay"
 
