@@ -47,6 +47,17 @@ class SitesController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def search
+    @pagy, @sites = pagy(Site.search(params[:word], params[:option], params[:sort]), items: 12)
+    if @sites.nil?
+      @site_count = "0"
+    else
+      @site_count = @sites.size
+    end
+    @word = params[:word]
+    @option = params[:option]
+  end
+
   private
 
   def site_params

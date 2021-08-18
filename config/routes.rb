@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  get '/sites/search', to: 'sites#search', as: 'sites_search'
   resources :sites, only: %i[new index show edit create destroy update]
 
   unauthenticated :user do
