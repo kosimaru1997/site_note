@@ -262,15 +262,9 @@ pre {
   background-color: #f1f3ff;
 }
 
-
-// ーーーーーモーダルーーーーーー
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 90%;
-    margin: 30px auto;
-  }
+.search {
+  width: 60%;
 }
-// ーーーーーーーーーーーーーーー
 
 // ーーーーーーーレスポンシブーーーーーーーーー
 @media (max-width: 1023px) {
@@ -311,4 +305,18 @@ pre {
     margin: 0 auto;
   }
 
+  .search {
+    width: 90%;
+    margin-top: 20px;
+  }
+
 }
+
+// ーーーーーモーダルーーーーーー
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 95%;
+    margin: 30px auto;
+  }
+}
+// ーーーーーーーーーーーーーーー
