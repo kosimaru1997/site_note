@@ -1,5 +1,7 @@
 class Site < ApplicationRecord
   belongs_to :user
+  has_many :site_tags
+  has_many :tags, through: :site_tags
   validates :url, uniqueness: { scope: :user_id }
 
   def get_site_info(site_url)
@@ -17,7 +19,7 @@ class Site < ApplicationRecord
               elsif option == "note"
                 Site.where("note LIKE ?", "%#{word}%")
               else
-                Site.all
+                return
               end
 
     sites = if sort == "new"
