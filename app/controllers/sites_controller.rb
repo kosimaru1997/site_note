@@ -14,7 +14,7 @@ class SitesController < ApplicationController
       render 'shared/flash' and return
     end
 
-    tag_list = params[:site][:tag].split(",").map(&:strip)
+    tag_list = params[:site][:tag].split(",").map(&:strip) if params[:site][:tag]
     @site.save_tags(tag_list) if tag_list
     
     if @site.save
