@@ -1,6 +1,6 @@
 class Site < ApplicationRecord
   belongs_to :user
-  has_many :site_tags
+  has_many :site_tags, dependent: :destroy
   has_many :tags, through: :site_tags
   validates :url, uniqueness: { scope: :user_id }
 
@@ -11,13 +11,26 @@ class Site < ApplicationRecord
     self.image = page.images.best
   end
 
-  def self.search(word, option, sort)
+  def save_tags(tag_list)
+    if self.tags != nil
+      tag_recoreds = SiteTag.where(site_id: id)
+      tag_recoreds.destroy_all
+    end
+
+    tag_list.each do |tag|
+      inspect_tag = Tag.where(tag_name: tag).first_or_create
+      self.tags << inspect_tag #SiteTag.create(site_id: id, tag_id: tag.id)
+    end
+  end
+
+  def self.search(word, option, sort, user_id)
+    user_sites = User.find(user_id).sites
     relation = if option == "mix"
-                Site.where("title LIKE ? OR description LIKE ? OR note LIKE ?", "%#{word}%","%#{word}%","%#{word}%")
+                user_sites.where("title LIKE ? OR description LIKE ? OR note LIKE ? AND user_id = ?", "%#{word}%","%#{word}%","%#{word}%",user_id)
               elsif option == "title"
-                Site.where("title LIKE ?", "%#{word}%")
+                user_sites.where("title LIKE ?", "%#{word}%")
               elsif option == "note"
-                Site.where("note LIKE ?", "%#{word}%")
+                user_sites.where("note LIKE ?", "%#{word}%")
               else
                 return
               end
@@ -26,7 +39,7 @@ class Site < ApplicationRecord
               relation.order(created_at: "DESC")
             else
               relation.order(created_at: "ASC")
-            end    
+            end
   end
   
 end

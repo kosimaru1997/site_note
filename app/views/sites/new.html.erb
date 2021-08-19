@@ -6,8 +6,12 @@
         <% flash.each do |message_type, message| %>
         <% end %>
       </div>
-      <div class="bg-site py-3 px-4 mb-2">
-        <%= form_with(model: @site, local: false) do |f| %>
+      <%= form_with(model: @site, local: false) do |f| %>
+        <div class="tag-form mb-2">
+          <%= f.label :tags %>
+          <%= f.text_field :tag, class: "form-control", placeholder:",で区切ってください" %>
+        </div>
+        <div class="bg-site py-3 px-4 mb-2">
           <%= f.text_field :url, class: 'form-control mb-3', placeholder: "例：https://hogehoge" %>
           <div class="file-header d-flex">
             <div class="border-top border-start border-end events-none bg-white py-2 px-3" id="markdown"> Edit note </div>
@@ -17,11 +21,11 @@
           </div>
           <div id="preview-area"></div>
           <div id="note-form">
-            <%= f.text_area :note, size: "30x13" , class: "form-control note-control p-3", id: "md-textarea"%>
+            <%= f.text_area :note, size: "30x13", class: "form-control note-control p-3", id: "md-textarea", placeholder:"メモ記入欄（マークダウン対応）"%>
           </div>
           <%= f.submit :"Post", class: "btn btn-outline-secondary d-block px-4 ms-2 my-3" %>
-          <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
 
   </div>

@@ -13,6 +13,9 @@ class SitesController < ApplicationController
     rescue MetaInspector::RequestError,MetaInspector::ParserError => e
       render 'shared/flash' and return
     end
+
+    tag_list = params[:site][:tag].split(",").map(&:strip)
+    @site.save_tags(tag_list) if tag_list
     
     if @site.save
       redirect_to site_path(@site)
@@ -35,6 +38,8 @@ class SitesController < ApplicationController
 
   def update
     @site = Site.find(params[:id])
+    tag_list = params[:site][:tags].split(",").map(&:strip)
+    @site.save_tags(tag_list)
     if @site.update(site_params)
       redirect_to site_path(@site)
     else
@@ -44,11 +49,11 @@ class SitesController < ApplicationController
   
   def destroy
     Site.find(params[:id]).destroy
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
   end
 
   def search
-    @pagy, @sites = pagy(Site.search(params[:word], params[:option], params[:sort]), items: 12)
+    @pagy, @sites = pagy(Site.search(params[:word], params[:option], params[:sort],current_user.id), items: 12)
     if @sites.nil?
       @site_count = "0"
     else

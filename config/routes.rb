@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get '/sites/search', to: 'sites#search', as: 'sites_search'
+  post '/sites/:id/update_tags', to: 'sites#update_tags', as: 'sites_update_tags'
   resources :sites, only: %i[new index show edit create destroy update]
 
   unauthenticated :user do
