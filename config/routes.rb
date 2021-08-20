@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
   get '/sites/search', to: 'sites#search', as: 'sites_search'
   post '/sites/:id/update_tags', to: 'sites#update_tags', as: 'sites_update_tags'
   resources :sites, only: %i[new index show edit create destroy update]

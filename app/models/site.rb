@@ -23,8 +23,15 @@ class Site < ApplicationRecord
     end
   end
 
-  def self.search(word, option, sort, user_id)
-    user_sites = User.find(user_id).sites
+  def self.search(word, option, sort, tag, user_id)
+    user = User.find(user_id)
+    user_sites = if tag.empty?
+                   user.sites
+                 else
+                   tag = Tag.find(tag)
+                   tag.sites.where(user_id: user.id)
+                 end
+     
     relation = if option == "mix"
                 user_sites.where("title LIKE ? OR description LIKE ? OR note LIKE ? AND user_id = ?", "%#{word}%","%#{word}%","%#{word}%",user_id)
               elsif option == "title"

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
                  end
     @site = Site.new
     @pagy, @sites = pagy(user_sites.reverse_order, items: 12)
-    site_ids = user_sites.pluck(:id)
+    site_ids = current_user.sites.pluck(:id)
     tag_ids = SiteTag.where(site_id: site_ids).pluck(:tag_id)
     @tags = Tag.where(id: tag_ids)
   end

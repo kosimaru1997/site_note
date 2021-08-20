@@ -53,7 +53,7 @@ class SitesController < ApplicationController
   end
 
   def search
-    @pagy, @sites = pagy(Site.search(params[:word], params[:option], params[:sort],current_user.id), items: 12)
+    @pagy, @sites = pagy(Site.search(params[:word], params[:option], params[:sort], params[:tags], current_user.id), items: 12)
     if @sites.nil?
       @site_count = "0"
     else
@@ -61,6 +61,15 @@ class SitesController < ApplicationController
     end
     @word = params[:word]
     @option = params[:option]
+    @tag = if params[:tags].present?
+             Tag.find(params[:tags]).tag_name
+           else
+             "No Tags"
+           end
+              
+    site_ids = current_user.sites.pluck(:id)
+    tag_ids = SiteTag.where(site_id: site_ids).pluck(:tag_id)
+    @tags = Tag.where(id: tag_ids)
   end
 
   private

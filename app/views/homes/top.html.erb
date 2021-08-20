@@ -1,12 +1,26 @@
+<ul class="circles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
 <div id="top-page">
   <div class="container-fluid">
-    <div class="row align-items-center min-vh-75 min-vh-md-50" id="top-massage">
+    <div class="row align-items-center px-0" id="top-massage">
       <div class="col-12 text-center py-8">
         <h1 class="lh-sm fs-lg-6 fs-xxl-7">Wlecome! 
           <span class="text-primary">SITE<span class="text-warning"> NOTE</span></span> 
         </h1>
         <p class="text-700">SITE NOTEは様々なWebサイトを管理するためのツールです。 <br/>お気に入りのサイトや学習で利用したサイトにあなたのメモを添えて管理することができます。 </p>
-        <div class="mt-5"><a class="btn btn-warning rounded-pill" href="#!">Sign up</a></div>
+        <div class="mt-5"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn-warning rounded-pill" %></div>
       </div>
     </div>
 

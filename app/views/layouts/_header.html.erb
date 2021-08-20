@@ -16,9 +16,8 @@
           <li class="nav-item px-2">
             <%= link_to new_site_url, "data-turbolinks": false, class:"nav-link fw-bold" do %>Post<% end %>
           </li>
-          <li class="nav-item px-2"><a class="nav-link fw-bold" href="#services">Services</a></li>
           <li class="nav-item px-2">
-            <%= link_to "Log out", destroy_user_session_path, method: 'DELETE', class: "nav-link text-white btn btn-primary" %>
+            <%= link_to "Log out", destroy_user_session_path, method: 'DELETE', class: "nav-link fw-bold" %>
           </li>
         <% else %>
           <li class="nav-item px-2">
