@@ -1,4 +1,5 @@
-# Site Note
+# アプリ名：Site Note
+![スクリーンショット 2021-08-20 15 45 15](https://user-images.githubusercontent.com/79825084/130191911-5f40cb62-2532-434e-84b0-01642dd15278.png)
 
 ## サイト概要
   SITE NOTEは様々なWebサイトを管理するためのツールです。 <br/>お気に入りのサイトや学習で利用したサイトにあなたのメモを添えて管理することができます。
@@ -21,5 +22,6 @@
 - フロント言語：JavaScript
 - JSフレームワーク：jQuery
 - CSSフレームワーク：bootstrap 5.1.0
+- デプロイ：Heroku
 
 
