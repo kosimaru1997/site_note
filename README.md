@@ -19,7 +19,7 @@
 - バックエンド言語：Ruby 3.0.2
 - フレームワーク：Ruby on Rails 6.1.4  
 - データベース ：PostgreSQL 13.3
-- フロント言語：JavaScript
+- フロントエンド言語：JavaScript
 - JSフレームワーク：jQuery
 - CSSフレームワーク：bootstrap 5.1.0
 - デプロイ：Heroku
