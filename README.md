@@ -1,4 +1,7 @@
 # アプリ名：Site Note
+URL：https://site-note.herokuapp.com
+（ゲストログイン機能を付けております。）
+
 ![スクリーンショット 2021-08-20 15 45 15](https://user-images.githubusercontent.com/79825084/130191911-5f40cb62-2532-434e-84b0-01642dd15278.png)
 
 ## サイト概要
