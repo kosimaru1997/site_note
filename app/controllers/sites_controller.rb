@@ -1,10 +1,13 @@
 class SitesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :same_user!, only: [:show, :edit, :update, :destroy]
+
   def new
     @site = Site.new
   end
   
-  def index
-  end
+  # def index
+  # end
   
   def create
     @site = current_user.sites.new(site_params)
@@ -33,7 +36,6 @@ class SitesController < ApplicationController
   end
 
   def preview
-
   end
 
   def update
@@ -76,6 +78,12 @@ class SitesController < ApplicationController
 
   def site_params
     params.require(:site).permit(:url, :note)
+  end
+
+  def same_user!
+    if Site.find(params[:id]).user != current_user
+      redirect_to root_path
+    end
   end
 
 end

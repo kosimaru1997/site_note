@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show   
     user_sites = if params[:tag].nil?
                    current_user.sites
@@ -13,6 +14,4 @@ class UsersController < ApplicationController
     @tags = Tag.where(id: tag_ids)
   end
 
-  def edit
-  end
 end
