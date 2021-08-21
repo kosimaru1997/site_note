@@ -42,7 +42,8 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 #top-massage {
   padding: 50px 0;
   margin: 100px;
-  background-color: #f5f5ee;
+  background-color: rgb(241 241 241 / 60%);
+  z-index: 1;
 }
 
 // ーーーーーーユーザー認証ページーーーーーー
@@ -228,6 +229,7 @@ form#new_user input {
   left: 0;
   overflow: hidden;
   position: absolute;
+  z-index: -1;
 }
 
 .circles li{
