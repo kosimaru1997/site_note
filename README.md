@@ -17,6 +17,10 @@ URL：https://site-note.herokuapp.com
 - タグ付け機能
 - 登録したWebサイトの検索機能（検索条件：タイトル、メモ、タグ、 投稿時間による並び替え)
 
+## 操作デモ動画
+画面をクリックするとYoutube上でデモ動画が再生されます。（音声なし）
+[![SiteNote](https://img.youtube.com/vi/Zb2XzCsS-EA/0.jpg)](https://www.youtube.com/watch?v=Zb2XzCsS-EA)
+
 ## 使用技術
 
 - バックエンド言語：Ruby 3.0.2
