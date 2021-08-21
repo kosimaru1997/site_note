@@ -47,12 +47,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 // ーーーーーーユーザー認証ページーーーーーー
 .sign-up {
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(to bottom right, #ffca35 0%, #ded08d 100%);
   opacity: 0.9;
 }
 .login {
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(to bottom right, #288bd2 0%, #c5c3a6 100%);
   opacity: 0.9;
 }
@@ -146,7 +146,7 @@ form#new_user input {
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.15);
-  bottom: -150px;
+  bottom: -200px;
   animation: square 35s infinite; 
   transition-timing-function: linear;
   overflow: hidden;
