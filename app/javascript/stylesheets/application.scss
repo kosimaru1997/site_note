@@ -1,11 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
-// @import '@fortawesome/fontawesome-free/scss/fontawesome';
-// @import '@fortawesome/fontawesome-free/scss/solid';
-// @import '@fortawesome/fontawesome-free/scss/regular';
-// @import '@fortawesome/fontawesome-free/scss/brands';
-// @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
@@ -13,6 +8,17 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   margin: 0;
   padding: 0;
   font-family: Hiragino Maru Gothic ProN;
+}
+
+html {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+footer {
+  height: 80px;
+  position: relative;
+  bottom: 0;
 }
 
 .row {
@@ -31,17 +37,19 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   z-index: 1;
 }
 
+
+
 .tag-link {
   text-decoration: none;
 }
 
 #top-page {
-  height: 80vh;
+  height: 58vh;
 }
 
 #top-massage {
   padding: 50px 0;
-  margin: 100px;
+  margin: 100px 0;
   background-color: rgb(241 241 241 / 60%);
   z-index: 1;
 }
@@ -224,7 +232,7 @@ form#new_user input {
 
 .circles {
   width: 100%;
-  height: 100vh;
+  height: 90%;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -346,7 +354,7 @@ form#new_user input {
 
   100%{
       background-color: #ffe188;
-      transform: translateY(-1000px) rotate(720deg);
+      transform: translateY(-900px) rotate(720deg);
       opacity: 0;
       border-radius: 50%;
   }
