@@ -18,7 +18,7 @@ html {
 footer {
   height: 80px;
   position: relative;
-  bottom: 0;
+  bottom: -80px;
 }
 
 .row {
@@ -156,7 +156,7 @@ form#new_user input {
   height: 40px;
   background-color: rgba(255, 255, 255, 0.15);
   bottom: -200px;
-  animation: square 35s infinite; 
+  animation: square 35s infinite;
   transition-timing-function: linear;
   overflow: hidden;
 }
@@ -173,7 +173,7 @@ form#new_user input {
 .bg-bubbles li:nth-child(3) {
   left: 25%;
   animation-delay: 4s;
-  
+
 }
 .bg-bubbles li:nth-child(4) {
   left: 40%;
@@ -217,7 +217,7 @@ form#new_user input {
   left: 80%;
   width: 160px;
   height: 160px;
-  animation-delay: 11s;        
+  animation-delay: 11s;
 }
 
 
@@ -232,7 +232,7 @@ form#new_user input {
 
 .circles {
   width: 100%;
-  height: 90%;
+  height: 100%;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -349,13 +349,13 @@ form#new_user input {
       transform: translateY(0) rotate(0deg);
       opacity: 0.8;
       border-radius: 150px;
-      background-color: #ffe188;
+      background-color: #ffdb70;
   }
 
   100%{
       background-color: #ffe188;
       transform: translateY(-900px) rotate(720deg);
-      opacity: 0;
+      opacity: 0.2;
       border-radius: 50%;
   }
 
@@ -406,7 +406,7 @@ form#new_user input {
 
 .note-link {
   justify-content: space-between;
-  
+
   a {
     color: #676767;
     text-decoration: none;
