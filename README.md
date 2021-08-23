@@ -2,7 +2,7 @@
 URL：https://site-note.herokuapp.com
 （ゲストログイン機能を付けております。）
 
-![スクリーンショット 2021-08-20 15 45 15](https://user-images.githubusercontent.com/79825084/130191911-5f40cb62-2532-434e-84b0-01642dd15278.png)
+![スクリーンショット 2021-08-22 3 39 40](https://user-images.githubusercontent.com/79825084/130467935-af324d95-cbc1-48bb-bc2d-656725c207fe.png)
 
 ## サイト概要
   SITE NOTEは様々なWebサイトを管理するためのツールです。 <br/>お気に入りのサイトや学習で利用したサイトにあなたのメモを添えて管理することができます。
